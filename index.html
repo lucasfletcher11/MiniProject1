@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Course Explorer</h1>
+    </header>
+
+    <section id="upload-section" class="panel">
+        <label for="file-input">Load course data (JSON):</label>
+        <input type="file" id="file-input" accept=".json,application/json">
+        <p id="error-message" class="error hidden"></p>
+    </section>
+
+    <section id="controls-section" class="panel">
+        <div class="control">
+            <label for="department-filter">Department</label>
+            <select id="department-filter">
+                <option value="all">All</option>
+            </select>
+        </div>
+        <div class="control">
+            <label for="level-filter">Level</label>
+            <select id="level-filter">
+                <option value="all">All</option>
+            </select>
+        </div>
+        <div class="control">
+            <label for="credits-filter">Credits</label>
+            <select id="credits-filter">
+                <option value="all">All</option>
+            </select>
+        </div>
+        <div class="control">
+            <label for="instructor-filter">Instructor</label>
+            <select id="instructor-filter">
+                <option value="all">All</option>
+            </select>
+        </div>
+        <div class="control">
+            <label for="semester-filter">Semester</label>
+            <select id="semester-filter">
+                <option value="all">All</option>
+            </select>
+        </div>
+        <div class="control">
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select">
+                <option value="none">None</option>
+                <option value="id">ID</option>
+                <option value="title">Title</option>
+                <option value="semester">Semester</option>
+            </select>
+        </div>
+    </section>
+
+    <main>
+        <section id="list-section" class="panel">
+            <h2>Courses <span id="course-count"></span></h2>
+            <ul id="course-list"></ul>
+        </section>
+
+        <section id="details-section" class="panel">
+            <h2>Course Details</h2>
+            <div id="course-details">
+                <p class="placeholder">Select a course to see its details.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="course.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
